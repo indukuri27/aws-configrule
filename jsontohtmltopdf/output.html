@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid #1C6EA4;
+            background-color: #EFEFEF;
+            width: 100%;
+            text-align: left;
+            border-collapse: collapse;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            color: #000000;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+        }
+        
+        table td,
+        table th {
+            border: 1px solid #AAAAAA;
+            padding: 3px 2px;
+        }
+        
+        table tbody td {
+            font-size: 14px;
+        }
+        
+        table tr:nth-child(even) {
+            background: #D0E4F5;
+        }
+        
+        table thead {
+            background: #2591D8;
+            background: -moz-linear-gradient(top, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            background: -webkit-linear-gradient(top, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            background: linear-gradient(to bottom, #5bace2 0%, #3a9cdc 66%, #2591D8 100%);
+            border-bottom: 2px solid #444444;
+        }
+        
+        table thead th {
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFFFFF;
+            border-left: 2px solid #D0E4F5;
+        }
+        
+        table thead th:first-child {
+            border-left: none;
+        }
+        
+        .High {
+            color: crimson
+        }
+    </style>
+</head>
+<p>Please review the following compliance report for your AWS accounts and take action as necessary.
+</p>
+<p>You can also log into the AWS Auditing account through the AWS Console via Okta to review the up-to-date compliance status of your AWS accounts.
+</p>
+<p>If you have any questions please contact Team Igneous on MS Team or by replying to this email.
+</p>
+<p>Thank you.</p>
+
+
+<h2>Rule: Check EBS Volumes are Encrypted</h2>
+<p>Severity: <span class="Medium">Medium</span></p>
+<p>Description: Check whether the EBS volumes that are in an attached state are encrypted.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>vol-0c04806900108db55</td>
+            <td>AWS::EC2::Volume</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-04977b7ee39a0ee5e</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0aef44da8f6710e31</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0cfd07f5641e7627f</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0cd4189ce0fa7305c</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: EC2 Instance shouldn't have Public IP</h2>
+<p>Severity: <span class="High">High</span></p>
+<p>Description: Check EC2 instance does not have an assigned public ip</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>i-03d3e83594568766f</td>
+            <td>AWS::EC2::Instance</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-021ed6d34afa67101</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-02830be50eaa8fa0f</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-0bbd88645701b6d57</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: MultiRegionCloudTrailEnabled</h2>
+<p>Severity: <span class="Low">Low</span></p>
+<p>Description: Checks that there is at least one multi-region AWS CloudTrail. The rule is NON_COMPLIANT if the trails do not match inputs parameters.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>628607282128</td>
+            <td>AWS::::Account</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>628607282128</td>
+            <td>AWS::::Account</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>628607282128</td>
+            <td>AWS::::Account</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>628607282128</td>
+            <td>AWS::::Account</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>911426250850</td>
+            <td>AWS::::Account</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>911426250850</td>
+            <td>AWS::::Account</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>911426250850</td>
+            <td>AWS::::Account</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>911426250850</td>
+            <td>AWS::::Account</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: VPC Security Group Open Only To Authorized Ports</h2>
+<p>Severity: <span class="High">High</span></p>
+<p>Description: Checks whether the security group with 0.0.0.0/0 of any Amazon VPC allows only specific inbound TCP or UDP traffic. The rule is NON_COMPLIANT if a security group with inbound 0.0.0.0/0. with no ports provided in the parameters.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>sg-03fff1f5125d846c4</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-017e4a4646afd9ad0</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-01ebf4fc773c8ce94</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-03b4219b0ce329538</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-03c7ade6a38695634</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0493a4d55aa315803</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-057502ee3415ce4d3</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-063ec8851381be653</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-093f8af964fc43df6</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-09a92e8ec431e0ec7</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-09c7abfb372fb3c8a</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0a023559d59ed19b4</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0b438609df61376a1</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-02edafc65ec9c0c61</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0e424dd07fa864677</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0ab3ce806de99aa0a</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: Required Tags are Applied</h2>
+<p>Severity: <span class="Low">Low</span></p>
+<p>Description: Checks whether your resources have the tags that you specify</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>i-03d3e83594568766f</td>
+            <td>AWS::EC2::Instance</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>igw-072d907c</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-38ff4f45</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-0c9e6f617b20ad1d3</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-1d954163</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-03fff1f5125d846c4</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-f8d50fa8</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-01f2ca2f</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-27744940</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-30fdc36c</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-5ed72050</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-df9edfe1</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-e0fb36ad</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-8f0d44f5</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0c04806900108db55</td>
+            <td>AWS::EC2::Volume</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-terraform-state-lock</td>
+            <td>AWS::DynamoDB::Table</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>igw-0e930e66</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>acl-ebcf1180</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-7759e11c</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-aa79e3c8</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-446e3f3e</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-d149f09d</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-f5756e9d</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-7a4fbf11</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>aws-athena-query-results-628607282128-us-east-2</td>
+            <td>AWS::S3::Bucket</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-terraform-state</td>
+            <td>AWS::S3::Bucket</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>igw-2d8f9949</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-f9d07d9f</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-43d45b25</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-d97057a6</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-a1302ffa</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-d016d5b6</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>igw-e270809b</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>acl-1e05e365</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-e5f0989e</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-10c03452</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-49b9db62</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-4a947e17</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-57879f2e</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-70dbde3b</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-a0fe70d8</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>arn:aws:cloudformation:us-east-1:911426250850:stack/aws-sam-cli-managed-default/9316e680-42ca-11ea-b268-0e763951b664</td>
+            <td>AWS::CloudFormation::Stack</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>arn:aws:cloudformation:us-east-1:911426250850:stack/test-sandbox-eks-vpc/0a787800-3ea3-11ea-b2b5-0ac7f938abd6</td>
+            <td>AWS::CloudFormation::Stack</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>arn:aws:cloudformation:us-east-1:911426250850:stack/zd-sandbox-eks-vpc/878b7b30-0bdb-11ea-96b6-0a36a8f29061</td>
+            <td>AWS::CloudFormation::Stack</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-021ed6d34afa67101</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-02830be50eaa8fa0f</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>i-0bbd88645701b6d57</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>igw-09a9974fc852a9222</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>igw-fda02486</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-021adf2f932ca3a42</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-0b4299d88ae1af0fa</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-0c0cbec3ad67a02cd</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-0de857e368111d238</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-49f44f34</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-009a68d47b067f349</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-020cbaa80f253d789</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-074e8c7251c4b1272</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-08271d91dae321c51</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-08dfa46117d64ade6</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>eni-0c42756beebe4f312</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-01997fbb02901bfb2</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-030d7a06048d2661d</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-07b612304ecb8780c</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-0b468400cc9725f9b</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-0db7754b301d6d027</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-a225f9dc</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-017e4a4646afd9ad0</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-01ebf4fc773c8ce94</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-03b4219b0ce329538</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-03c7ade6a38695634</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0493a4d55aa315803</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0495e6f18f0a3cedc</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-051e81179aa652ae3</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-057502ee3415ce4d3</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-063ec8851381be653</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-06c05a32f068bd599</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-093f8af964fc43df6</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-09a92e8ec431e0ec7</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-09c7abfb372fb3c8a</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0a023559d59ed19b4</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0b438609df61376a1</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0e1993543c5953153</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0f6c6d1e88b141f57</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-b64319e4</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-05a08082c4de9b295</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-060943d067b8595f8</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-0b62c51f163f03164</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-0cf9d6c8a52d512d1</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-2117140f</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-23a2ea1d</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-276c6d7b</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-44f9fc23</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-964eb198</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-bcfc28f1</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-06c95cd9faa08cca7</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0856799ee33bed788</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0a6bca191883c2815</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0d1c4a7c2740c97c2</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-9dcd9ce7</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-04977b7ee39a0ee5e</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0abe26f5f560f0a23</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0aef44da8f6710e31</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0cfd07f5641e7627f</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>hackathon-team-tight-deadline-db2-final-snapshot</td>
+            <td>AWS::RDS::DBSnapshot</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSubnetGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default-vpc-0a6bca191883c2815</td>
+            <td>AWS::RDS::DBSubnetGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default.redshift-1.0</td>
+            <td>AWS::Redshift::ClusterParameterGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::Redshift::ClusterSubnetGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>cf-templates-17n2b48tw6n7e-us-east-1</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-dev-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-local-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>arn:aws:cloudformation:us-east-2:911426250850:stack/khead-sandbox-eks-vpc/8b4336e0-42a0-11ea-a558-021e2396e2cc</td>
+            <td>AWS::CloudFormation::Stack</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>i-099d7390031312aeb</td>
+            <td>AWS::EC2::Instance</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>igw-4b3aa623</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>acl-092c60aedf1b217c1</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>acl-4c4a9327</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>eni-00272b32cb271cc75</td>
+            <td>AWS::EC2::NetworkInterface</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-0e05b53ee8ebc82bc</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-d4e55fbf</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-01c567b6fb4c89906</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-02edafc65ec9c0c61</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0bdaa5c6caf133b07</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0e424dd07fa864677</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-e24e6a80</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-5ae9b920</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-d6b8039a</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-e89c8680</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0e13e73ceb300953e</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-c726d4ac</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vol-0cd4189ce0fa7305c</td>
+            <td>AWS::EC2::Volume</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>default-vpc-c726d4ac</td>
+            <td>AWS::RDS::DBSubnetGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>igw-5e3d233a</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>acl-ae5bf1c8</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-6675e100</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-0ab3ce806de99aa0a</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-b98cfac7</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-02925964</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-145db94e</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-57504830</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>default-vpc-57504830</td>
+            <td>AWS::RDS::DBSubnetGroup</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>igw-8dbe72f4</td>
+            <td>AWS::EC2::InternetGateway</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>acl-f2a75589</td>
+            <td>AWS::EC2::NetworkAcl</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-805a1efb</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>sg-dc3b3487</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-3d3ff860</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-42524309</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-7a3f4151</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>subnet-8ee014f6</td>
+            <td>AWS::EC2::Subnet</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0a41da72</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>default</td>
+            <td>AWS::RDS::DBSecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: SSL Requests Only</h2>
+<p>Severity: <span class="Medium">Medium</span></p>
+<p>Description: Checks whether S3 buckets have policies that require requests to use Secure Socket Layer (SSL).</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>aws-athena-query-results-628607282128-us-east-2</td>
+            <td>AWS::S3::Bucket</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-terraform-state</td>
+            <td>AWS::S3::Bucket</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>cf-templates-17n2b48tw6n7e-us-east-1</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-dev-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-local-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: AccessKeysRotated</h2>
+<p>Severity: <span class="High">High</span></p>
+<p>Description: Checks whether the active access keys are rotated within the number of days specified in maxAccessKeyAge. The rule is NON_COMPLIANT if the access keys have not been rotated for more than maxAccessKeyAge number of days.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>AIDAZEW7J5PIDCHEJTFBK</td>
+            <td>AWS::IAM::User</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDAZEW7J5PIH6N23S6PJ</td>
+            <td>AWS::IAM::User</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDAZEW7J5PILCTANK5QP</td>
+            <td>AWS::IAM::User</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BREFOQD7LA7</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BREJQSWPXR3</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BRHS7RR52UC</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BRJYZCJG43C</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BRK66VVY6OR</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BRKPTWOG3NN</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>AIDA5INJ45BRLVDQAYRF5</td>
+            <td>AWS::IAM::User</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: Enabled S3 Bucket ServerSide Encryption</h2>
+<p>Severity: <span class="High">High</span></p>
+<p>Description: Checks that your Amazon S3 bucket either has Amazon S3 default encryption enabled or that the S3 bucket policy explicitly denies put-object requests without server side encryption.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>aws-athena-query-results-628607282128-us-east-2</td>
+            <td>AWS::S3::Bucket</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>aws-sam-cli-managed-default-samclisourcebucket-95r0cnr3ad38</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-dev-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>wellbeing-local-hhh-rcm-00000000-0000-0000-0000-000000000000</td>
+            <td>AWS::S3::Bucket</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: Enable VPC Flow Logs</h2>
+<p>Severity: <span class="High">High</span></p>
+<p>Description: Enable VPC flow logs on organization level</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>vpc-7a4fbf11</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-bedbcbd9</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-a0fe70d8</td>
+            <td>AWS::EC2::VPC</td>
+            <td>628607282128</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-06c95cd9faa08cca7</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0856799ee33bed788</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0e13e73ceb300953e</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-c726d4ac</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-57504830</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-west-1</td>
+        </tr>
+        
+        <tr>
+            <td>vpc-0a41da72</td>
+            <td>AWS::EC2::VPC</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+        <tr>
+            <td>rtb-805a1efb</td>
+            <td>AWS::EC2::RouteTable</td>
+            <td>911426250850</td>
+            <td>us-west-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<h2>Rule: RestrictedCommonPorts</h2>
+<p>Severity: <span class="Medium">Medium</span></p>
+<p>Description: Checks if the security groups in use do not allow unrestricted incoming TCP traffic to the specified ports. The rule is COMPLIANT when IP addresses of the incoming SSH traffic in the security group are restricted to specified ports.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Resource Id</th>
+            <th>Resource Type</th>
+            <th>Account Id</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <td>sg-0493a4d55aa315803</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-057502ee3415ce4d3</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-1</td>
+        </tr>
+        
+        <tr>
+            <td>sg-02edafc65ec9c0c61</td>
+            <td>AWS::EC2::SecurityGroup</td>
+            <td>911426250850</td>
+            <td>us-east-2</td>
+        </tr>
+        
+    </tbody>
+</table>
+
+
+</html>

@@ -91,7 +91,12 @@ def generate_reports():
 #        create_pdf(template_data, agg_rules_obj)
         print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
 #        send_email(aggregator, json.dumps(agg_rules_obj))
-        send_email(aggregator, create_pdf(template_data, agg_rules_obj))
+
+        pdf_report_file = create_pdf(template_data, agg_rules_obj)
+        with open(pdf_report_file, 'r') as pdf_file:
+            pdf_data = pdf_file.read()
+        send_email(aggregator, pdf_data)
+
         print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
         break
 

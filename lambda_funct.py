@@ -3,14 +3,19 @@ import boto3
 import json
 import pdfkit
 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
+from json.decoder import JSONDecodeError
 from jinja2 import Template
 from botocore.exceptions import ClientError
+
 
 DEV_OPS_DL = 'indukuriv@gmail.com'
 AUDIT_EMAIL_ADDRESS = 'indukuriv@gmail.com'
 RETURN_PATH_ADDRESS = 'indukuriv@gmail.com'
-#SES_SOURCE_ARN = 'arn:aws:ses:us-east-1:145041:identity/mail.a'
-#SES_RETURNPATH_ARN = 'arn:aws:ses:us-east-1:145041:identity/mail.a'
+#SES_SOURCE_ARN = 'arn:aws:ses:us-east-1:900751145041:identity/mail..io'
+#SES_RETURNPATH_ARN = 'arn:aws:ses:us-east-1:900751145041:identity/mail.io'
 DEBUG_EMAIL_DESTINATION = 'indukuriv@gmail.com'
 RULE_NAME_REGEX = '-(.*?)-'
 ses_client = boto3.client('ses', region_name="us-east-1")
@@ -18,9 +23,12 @@ config_client = boto3.client('config')
 
 # Read rule_info.json file
 ruleinfo_data = json.load(open('rule_info.json', 'r'))  # Config rule data file
-template_data = json.load(open('htmltopdf_template.j2', 'r'))  # Jinja2 template file
+template_data = open('htmltopdf_template.j2', 'r', encoding='utf-8').read()  # Jinja2 template file
+#with open('keys.json', encoding='utf-8') as fh:
+#    data = json.load(fh)
+
 #json_file = "sortSevLambda.json"
-output_file = 'output.html'
+output_file = '/tmp/output.html'
 
 # Lambda handler function
 
@@ -83,32 +91,35 @@ def generate_reports():
 #        create_pdf(template_data, agg_rules_obj)
         print(f"Sending report for {get_aggregator_business_unit(aggregator)}")
 #        send_email(aggregator, json.dumps(agg_rules_obj))
-        send_email(aggregator, create_pdf(
-            template_data, json.load(agg_rules_obj)))
+        send_email(aggregator, create_pdf(template_data, agg_rules_obj))
         print(f"Sent report for {get_aggregator_business_unit(aggregator)}")
         break
 
 
-def create_pdf(template_data, agg_rules_obj):
+def create_pdf(template_data1, agg_rules_obj):
     options = {
         'page-size': 'Letter',
-        'margin-top': '0.50in',
-        'margin-right': '0.50in',
-        'margin-bottom': '0.50in',
-        'margin-left': '0.50in',
+        'margin-top': '0.40in',
+        'margin-right': '0.40in',
+        'margin-bottom': '0.40in',
+        'margin-left': '0.40in',
         'encoding': "UTF-8",
         'custom-header': [
             ('Accept-Encoding', 'gzip')
         ],
         'no-outline': None
     }
-    template = Template(template_data.read())
+    template = Template(template_data1)
     finalData = template.render(
         aggregatorRules=agg_rules_obj['AggregatorRules'])
     with open(output_file, 'w') as pdf:
         pdf.write(finalData)
-    return pdfkit.from_file('output.html', 'convertedpdf.pdf', options=options)
-
+    config = pdfkit.configuration(wkhtmltopdf='./wkhtmltox/bin/wkhtmltopdf')
+#    pdfkit.from_file(output_file, '/tmp/convertedpdf.pdf', options=options, configuration=config)
+    outputpdf = '/tmp/convertedpdf.pdf'
+    pdfkit.from_file(output_file, outputpdf, options=options, configuration=config)
+    
+    return outputpdf
 
 def get_aggregator_data(aggregator_level):
     """
@@ -226,8 +237,7 @@ def create_multipart_message(sender, recipients, title, text, html, attachment):
     # Add attachments
     if attachment:
         att = MIMEApplication(attachment)
-        att.add_header('Content-Disposition', 'attachment',
-                       filename="output.html")
+        att.add_header('Content-Disposition', 'attachment', filename="report.pdf")
         # Add the attachment to the parent container.
         msg.attach(att)
     return msg
